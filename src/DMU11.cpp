@@ -69,7 +69,7 @@ int DMU11::openPort()
     defaults_.c_lflag &= ~(ICANON | ECHO | ECHOE | ISIG /*| IEXTEN | ECHONL*/);
     defaults_.c_oflag &= ~OPOST;
 
-    defaults_.c_cc[VMIN] = 68;       //Minimum - two bytes
+    defaults_.c_cc[VMIN] = 0;       //Minimum - two bytes
     defaults_.c_cc[VTIME] = 0;
 
     if (tcsetattr(file_descriptor_, TCSANOW, &defaults_) != 0)
