@@ -27,9 +27,9 @@ void imuCallback(const sensor_msgs::ImuConstPtr &imu_in)
 
     m.getRPY(d_roll, d_pitch, d_yaw);
 
-    roll += d_roll;
-    pitch += d_pitch;
-    yaw += d_yaw;
+    roll = d_roll;
+    pitch = d_pitch;
+    yaw = d_yaw;
 
     q.setRPY(roll, pitch, yaw);
 
